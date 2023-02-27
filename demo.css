@@ -1,0 +1,44 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    background: black;
+    min-height: 100vh;
+    cursor:grab;
+}
+
+.ball
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: rgb(255, 0, 0) -2px 1px 40px 2px,
+                inset #ffffffc9 -3px 3px 10px 1px;
+
+    background: red;
+    transition: 0.5s;
+}
+
+.ball_bounce
+{
+    animation: test 1s linear infinite;
+}
+
+@keyframes test {
+
+    0%
+    {
+        transform: skewX(0deg);
+        transform: skewX(10deg);
+    }
+    100%
+    {
+        transform: skewX(10deg);
+        transform: skewX(0deg);
+    }
+}

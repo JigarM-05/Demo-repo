@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+
+    <div class="ball">
+
+    </div>
+    <script>
+        let ball = document.querySelector(".ball");
+
+        let colors = ['yello','blue','red','green','cyan','lime'];
+        ball.addEventListener("click",test);
+        console.log("height="+window.innerHeight);
+        console.log("width="+window.innerWidth);
+
+        function test()
+        {
+            let x = Math.floor(Math.random() * window.innerHeight - 55);
+            console.log("x="+x);
+            let y = Math.floor(Math.random() * window.innerWidth - 55);
+            console.log("y="+y);
+    
+            let shining = `box-shadow:${colors[0]} -2px 1px 40px 2px,inset #ffffffc9 -3px 3px 10px 1px;`;
+
+            ball.setAttribute('style',`background:${colors[0]};${shining}margin-top:${Math.abs(x)}px;margin-left:${Math.abs(y)}px`);
+            //ball.classList.toggle("ball_bounce");
+            
+            colors.push(colors.shift());
+            console.log(colors);
+        }
+    </script>
+</body>
+</html>
